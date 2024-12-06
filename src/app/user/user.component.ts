@@ -19,6 +19,11 @@ export class UserComponent {
     this.logTest();
   }
 
+  test() : void {
+
+
+  }
+
   logTest(){
     console.log(this.selectedUser);
   }
