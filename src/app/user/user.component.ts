@@ -19,6 +19,10 @@ export class UserComponent {
     this.logTest();
   }
 
+  get getImagePath(){
+    return `assets/img/users/${this.selectedUser.avatar}`;
+  }
+
   logTest(){
     console.log(this.selectedUser);
   }
