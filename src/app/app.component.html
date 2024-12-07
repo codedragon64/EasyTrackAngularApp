@@ -1,4 +1,3 @@
-
 <app-header />
 
 <!-- rest of the app content -->
@@ -6,10 +5,16 @@
 <main>
   <ul>
     <li>
-        <app-user/>
+      <app-user [avatar]="usersArray[0].avatar" [name]="usersArray[0].name" />
+    </li>
+    <li>
+      <app-user [avatar]="usersArray[1].avatar" [name]="usersArray[1].name" />
+    </li>
+    <li>
+      <app-user [avatar]="usersArray[2].avatar" [name]="usersArray[2].name" />
+    </li>
+    <li>
+      <app-user [avatar]="usersArray[3].avatar" [name]="usersArray[3].name" />
     </li>
   </ul>
 </main>
-
-
-
