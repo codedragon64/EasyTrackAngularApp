@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-import { DUMMY_USERS } from '../users';
-
-const randomUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-let test2: File;
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -12,14 +8,21 @@ let test2: File;
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+  @Input({required: true}) id! : string;
+  @Input({required: true}) avatar! : string;
+  @Input({required: true}) name! : string; 
 
-  selectedUser = DUMMY_USERS[randomUserIndex];
+  @Output() select = new EventEmitter<string>();
 
   constructor() {
-    this.logTest();
   }
 
-  logTest(){
-    console.log(this.selectedUser);
+  get imagePath(){
+    return `assets/img/users/${this.avatar}`;
   }
+
+  onSelectUser(){
+      this.select.emit(this.id);
+  }
+
 }

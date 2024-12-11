@@ -1,4 +1,3 @@
-
 <app-header />
 
 <!-- rest of the app content -->
@@ -6,10 +5,38 @@
 <main>
   <ul>
     <li>
-        <app-user/>
+      <app-user
+        [id]="usersArray[0].id"
+        [avatar]="usersArray[0].avatar"
+        [name]="usersArray[0].name"
+        (select)="onSelectedUser($event)"
+      />
     </li>
-  </ul>
+    <li>
+      <app-user
+        [id]="usersArray[1].id"
+        [avatar]="usersArray[1].avatar"
+        [name]="usersArray[1].name"
+        (select)="onSelectedUser($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [id]="usersArray[2].id"
+        [avatar]="usersArray[2].avatar"
+        [name]="usersArray[2].name"
+        (select)="onSelectedUser($event)"
+      />
+    </li>
+    <li>
+      <app-user
+        [id]="usersArray[3].id"
+        [avatar]="usersArray[3].avatar"
+        [name]="usersArray[3].name"
+        (select)="onSelectedUser($event)"
+      />
+    </li>
+  </ul> 
+
+  <app-tasks [name]="selectedUser.name"/>
 </main>
-
-
-
