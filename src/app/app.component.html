@@ -4,21 +4,14 @@
 
 <main>
   <ul>
-    <li>
-      <app-user [user]="usersArray[0]" (select)="onSelectedUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="usersArray[1]" (select)="onSelectedUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="usersArray[2]" (select)="onSelectedUser($event)" />
-    </li>
-    <li>
-      <app-user [user]="usersArray[3]" (select)="onSelectedUser($event)" />
-    </li>
+    @for ( user of usersArray; track user.id){
+      <li>
+        <app-user [user]="user" (select)="onSelectedUser($event)" />
+      </li>
+    }
   </ul>
 
   <app-tasks [name]="selectedUser.name" />
 
-  <p class="">{{ selectedUserID }}</p>
+  <p class="">Selected User ID : {{ selectedUserID }}</p>
 </main>
